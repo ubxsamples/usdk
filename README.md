@@ -10,7 +10,7 @@ Add maven in build.gradle or settings.gradle.
     }
 ```
 
-### Step 1
+### Step 2
 
 Add dependencies in build.gradle.
 ```groovy
