@@ -18,4 +18,10 @@ Add dependencies in build.gradle.
        implementation('com.ubx:usdk:1.4')
     }
 ```
+## Demo
 
+[usdk](https://github.com/ubxsamples/usdk/tree/main/usdk) 
+
+## Doc
+
+[USDK V1.4_20250415.docx](https://github.com/ubxsamples/usdk/blob/main/USDK%20V1.4_20250415.docx)
