@@ -276,6 +276,36 @@
                android:text="getBatteryFirstUseDate"
                android:layout_width="match_parent"
                android:layout_height="wrap_content"/>
+           <Button
+               android:id="@+id/btn39"
+               android:text="setDefaultSimData 0"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"/>
+           <Button
+               android:id="@+id/btn40"
+               android:text="setDefaultSimData 1"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"/>
+           <Button
+               android:id="@+id/btn41"
+               android:text="controlDefaultSimData 0 true"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"/>
+           <Button
+               android:id="@+id/btn42"
+               android:text="controlDefaultSimData 0 false"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"/>
+           <Button
+               android:id="@+id/btn43"
+               android:text="controlDefaultSimData 1 true"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"/>
+           <Button
+               android:id="@+id/btn44"
+               android:text="controlDefaultSimData 1 false"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"/>
        </LinearLayout>
    </ScrollView>
 </LinearLayout>

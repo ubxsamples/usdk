@@ -1,10 +1,7 @@
 package com.ubx.platform_sdk;
 
-import android.annotation.SuppressLint;
-import android.content.Context;
 import android.content.pm.IPackageDeleteObserver;
 import android.content.pm.IPackageInstallObserver;
-import android.device.DeviceManager;
 import android.device.IApn;
 import android.device.IAppInstall;
 import android.device.IBattery;
@@ -12,29 +9,22 @@ import android.device.IDateAndTime;
 import android.device.IDevice;
 import android.device.IHotspot;
 import android.device.INavigation;
-import android.device.IPermission;
 import android.device.IStatusBar;
 import android.device.ISystemInfo;
 import android.device.IWifi;
 import android.os.Bundle;
-import android.os.Handler;
-import android.os.PowerManager;
 import android.os.RemoteException;
 import android.view.View;
 import android.widget.Toast;
 
-import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
 import com.ubx.platform_sdk.databinding.ActivityDeviceBinding;
-import com.ubx.platform_sdk.databinding.ActivityMainBinding;
 
 public class DeviceActivity extends AppCompatActivity {
 
     ActivityDeviceBinding binding;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -58,7 +48,7 @@ public class DeviceActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Toast.makeText(DeviceActivity.this, "123", Toast.LENGTH_SHORT).show();
-               navigation.enableHomeKey(true);
+                navigation.enableHomeKey(true);
             }
         });
         binding.btn3.setOnClickListener(new View.OnClickListener() {
@@ -70,7 +60,7 @@ public class DeviceActivity extends AppCompatActivity {
         binding.btn4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(DeviceActivity.this, navigation.getHomeKeyEnabled()+"", Toast.LENGTH_SHORT).show();
+                Toast.makeText(DeviceActivity.this, navigation.getHomeKeyEnabled() + "", Toast.LENGTH_SHORT).show();
             }
         });
         binding.btn5.setOnClickListener(new View.OnClickListener() {
@@ -88,7 +78,7 @@ public class DeviceActivity extends AppCompatActivity {
         binding.btn7.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(DeviceActivity.this, navigation.getLeftKeyEnabled()+"", Toast.LENGTH_SHORT).show();
+                Toast.makeText(DeviceActivity.this, navigation.getLeftKeyEnabled() + "", Toast.LENGTH_SHORT).show();
             }
         });
         binding.btn8.setOnClickListener(new View.OnClickListener() {
@@ -106,13 +96,13 @@ public class DeviceActivity extends AppCompatActivity {
         binding.btn10.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(DeviceActivity.this, navigation.getRightKeyEnabled()+"", Toast.LENGTH_SHORT).show();
+                Toast.makeText(DeviceActivity.this, navigation.getRightKeyEnabled() + "", Toast.LENGTH_SHORT).show();
             }
         });
         binding.btn11.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                dateAndTime.setCurrentTime(System.currentTimeMillis()+60000);
+                dateAndTime.setCurrentTime(System.currentTimeMillis() + 60000);
             }
         });
         binding.btn12.setOnClickListener(new View.OnClickListener() {
@@ -137,13 +127,13 @@ public class DeviceActivity extends AppCompatActivity {
         binding.btn15.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(DeviceActivity.this, apn.queryAPN("name=?",new String[]{"test-apn"}), Toast.LENGTH_SHORT).show();
+                Toast.makeText(DeviceActivity.this, apn.queryAPN("name=?", new String[]{"test-apn"}), Toast.LENGTH_SHORT).show();
             }
         });
         binding.btn16.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(DeviceActivity.this, ""+apn.deleteAPN("name=?",new String[]{"test-apn"}), Toast.LENGTH_SHORT).show();
+                Toast.makeText(DeviceActivity.this, "" + apn.deleteAPN("name=?", new String[]{"test-apn"}), Toast.LENGTH_SHORT).show();
             }
         });
         IDevice device = new IDevice();
@@ -219,6 +209,7 @@ public class DeviceActivity extends AppCompatActivity {
                 device.enableNFC(true);
             }
         });
+
         binding.btn209.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -234,7 +225,7 @@ public class DeviceActivity extends AppCompatActivity {
         binding.btn211.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                device.startLocalOsUpdate(DeviceActivity.this,"/sdcard/ota.zip");
+                device.startLocalOsUpdate(DeviceActivity.this, "/sdcard/ota.zip");
             }
         });
         binding.btn212.setOnClickListener(new View.OnClickListener() {
@@ -246,7 +237,7 @@ public class DeviceActivity extends AppCompatActivity {
         binding.btn213.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                new IWifi().connectToWifiNetwork("UROVOAP","urovo@36ap",2);
+                new IWifi().connectToWifiNetwork("UROVOAP", "urovo@36ap", 2);
             }
         });
         binding.btn214.setOnClickListener(new View.OnClickListener() {
@@ -271,7 +262,7 @@ public class DeviceActivity extends AppCompatActivity {
                         runOnUiThread(new Runnable() {
                             @Override
                             public void run() {
-                                Toast.makeText(DeviceActivity.this, pkgName+" "+returnCode, Toast.LENGTH_SHORT).show();
+                                Toast.makeText(DeviceActivity.this, pkgName + " " + returnCode, Toast.LENGTH_SHORT).show();
                             }
                         });
                     }
@@ -293,7 +284,7 @@ public class DeviceActivity extends AppCompatActivity {
                         runOnUiThread(new Runnable() {
                             @Override
                             public void run() {
-                                Toast.makeText(DeviceActivity.this, pkgName+" "+returnCode, Toast.LENGTH_SHORT).show();
+                                Toast.makeText(DeviceActivity.this, pkgName + " " + returnCode, Toast.LENGTH_SHORT).show();
                             }
                         });
                     }
@@ -316,7 +307,7 @@ public class DeviceActivity extends AppCompatActivity {
         binding.btn27.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                hotspot.setHotspotConfig("test","99999999",1,1,true);
+                hotspot.setHotspotConfig("test", "99999999", 1, 1, true);
             }
         });
         IBattery iBattery = new IBattery(this);
@@ -324,65 +315,103 @@ public class DeviceActivity extends AppCompatActivity {
         binding.btn28.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(DeviceActivity.this, "Battery SN --> "+iBattery.getSerialNumber(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(DeviceActivity.this, "Battery SN --> " + iBattery.getSerialNumber(), Toast.LENGTH_SHORT).show();
             }
         });
         binding.btn29.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(DeviceActivity.this, "The date the battery was manufactured --> "+iBattery.getBatteryManufactureDate(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(DeviceActivity.this, "The date the battery was manufactured --> " + iBattery.getBatteryManufactureDate(), Toast.LENGTH_SHORT).show();
             }
         });
         binding.btn30.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(DeviceActivity.this, "Battery rated capacity --> "+iBattery.getRatedCapacity(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(DeviceActivity.this, "Battery rated capacity --> " + iBattery.getRatedCapacity(), Toast.LENGTH_SHORT).show();
             }
         });
         binding.btn31.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(DeviceActivity.this, "Current battery capacity --> "+iBattery.getCurrentCapacity(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(DeviceActivity.this, "Current battery capacity --> " + iBattery.getCurrentCapacity(), Toast.LENGTH_SHORT).show();
             }
         });
         binding.btn32.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(DeviceActivity.this, "The battery has free power left --> "+iBattery.getCurrentCharge(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(DeviceActivity.this, "The battery has free power left --> " + iBattery.getCurrentCharge(), Toast.LENGTH_SHORT).show();
             }
         });
         binding.btn33.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(DeviceActivity.this, "Battery health --> "+iBattery.getBatteryHealth(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(DeviceActivity.this, "Battery health --> " + iBattery.getBatteryHealth(), Toast.LENGTH_SHORT).show();
             }
         });
         binding.btn34.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(DeviceActivity.this, "Number of battery charges --> "+iBattery.getCycleCount(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(DeviceActivity.this, "Number of battery charges --> " + iBattery.getCycleCount(), Toast.LENGTH_SHORT).show();
             }
         });
         binding.btn35.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(DeviceActivity.this, "Battery temperature --> "+iBattery.getTemp(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(DeviceActivity.this, "Battery temperature --> " + iBattery.getTemp(), Toast.LENGTH_SHORT).show();
             }
         });
         binding.btn36.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(DeviceActivity.this, "Whether it is a smart battery --> "+iBattery.isSmartBattery(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(DeviceActivity.this, "Whether it is a smart battery --> " + iBattery.isSmartBattery(), Toast.LENGTH_SHORT).show();
             }
-        }); binding.btn37.setOnClickListener(new View.OnClickListener() {
+        });
+        binding.btn37.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(DeviceActivity.this, "Battery PN --> "+iBattery.getPN(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(DeviceActivity.this, "Battery PN --> " + iBattery.getPN(), Toast.LENGTH_SHORT).show();
             }
-        }); binding.btn38.setOnClickListener(new View.OnClickListener() {
+        });
+        binding.btn38.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(DeviceActivity.this, "Battery first use time --> "+iBattery.getBatteryFirstUseDate(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(DeviceActivity.this, "Battery first use time --> " + iBattery.getBatteryFirstUseDate(), Toast.LENGTH_SHORT).show();
+            }
+        });
+        binding.btn39.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                device.setDefaultSimData(0);
+            }
+        });
+        binding.btn40.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                device.setDefaultSimData(1);
+            }
+        });
+        binding.btn41.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                device.controlSimData(0,true);
+            }
+        });
+        binding.btn42.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                device.controlSimData(0,false);
+            }
+        });
+        binding.btn43.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                device.controlSimData(1,true);
+            }
+        });
+        binding.btn44.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                device.controlSimData(1,false);
             }
         });
 
