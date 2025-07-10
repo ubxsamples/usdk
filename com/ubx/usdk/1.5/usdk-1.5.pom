@@ -5,30 +5,4 @@
   <artifactId>usdk</artifactId>
   <version>1.5</version>
   <packaging>aar</packaging>
-  <dependencies>
-    <dependency>
-      <groupId>androidx.appcompat</groupId>
-      <artifactId>appcompat</artifactId>
-      <version>1.6.0</version>
-      <scope>implementation</scope>
-    </dependency>
-    <dependency>
-      <groupId>com.google.android.material</groupId>
-      <artifactId>material</artifactId>
-      <version>1.12.0</version>
-      <scope>implementation</scope>
-    </dependency>
-    <dependency>
-      <groupId>androidx.appcompat</groupId>
-      <artifactId>appcompat</artifactId>
-      <version>1.6.0</version>
-      <scope>implementation</scope>
-    </dependency>
-    <dependency>
-      <groupId>com.google.android.material</groupId>
-      <artifactId>material</artifactId>
-      <version>1.12.0</version>
-      <scope>implementation</scope>
-    </dependency>
-  </dependencies>
 </project>
