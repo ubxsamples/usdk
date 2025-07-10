@@ -15,7 +15,7 @@ Add maven in build.gradle or settings.gradle.
 Add dependencies in build.gradle.
 ```groovy
     dependencies {
-       implementation('com.ubx:usdk:1.4')
+       implementation('com.ubx:usdk:1.5')
     }
 ```
 ## Demo
@@ -24,4 +24,4 @@ Add dependencies in build.gradle.
 
 ## Doc
 
-[USDK V1.4_20250415.docx](https://github.com/ubxsamples/usdk/blob/main/USDK%20V1.4_20250415.docx)
+[USDK V1.5_20250415.docx](https://github.com/ubxsamples/usdk/blob/main/USDK%20V1.4_20250415.docx)
