@@ -59,7 +59,7 @@ dependencies {
 
     implementation(fileTree("libs"));
 
-    implementation('com.ubx:usdk:1.4')
+    implementation('com.ubx:usdk:1.5')
     implementation libs.fragment.ktx
 
     testImplementation libs.junit
